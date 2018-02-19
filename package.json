@@ -1,0 +1,24 @@
+{
+	"name": "s3-upload-api",
+	"version": "0.0.1",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/haynajjar/s3-upload-api"
+	},
+	"dependencies": {
+		"aws-sdk": "*",
+		"cors": "^2.8.4",
+		"express": "latest",
+		"flow": "*",
+		"jade": "*",
+		"multer": "*",
+		"underscore": "*"
+	},
+	"license": {
+		"type": "MIT",
+		"url": "http://ryanwu.mit-license.org"
+	}
+}
