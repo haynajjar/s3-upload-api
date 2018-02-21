@@ -4,7 +4,13 @@
  	path = require('path'),
  	flow = require('flow');
 
- 
+ function base64_encode(file) {
+    // read binary data
+    var bitmap = fs.readFileSync(file);
+    // convert binary data to base64 encoded string
+	return new Buffer(bitmap).toString('base64');
+ }
+
  exports.s3 = function(req, res) {
  	var s3 = new AWS.S3({
 					"accessKeyId": process.env.ACCESS_KEY_ID,
@@ -39,6 +45,7 @@
  			}
  			result.etag = data.ETag;
  			result.location = data.Location;
+ 			result.img_data = base64_encode(file.path); 
  			this();
  		},
  		function() {
